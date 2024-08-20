@@ -1,13 +1,9 @@
 
-const myArr = [1,2,"a", "asdds",4]
 
 // export const greeting = localStorage.list = JSON.stringify(myArr);
 
-class item {
-    constructor(name,status) {
-
-        name = this.name
-        status = this.status
-        
-    }
-}
+// export function starter(){
+//     parseInt(localStorage.getItem('%x')) > 1 
+//     ? show()
+//     :localStorage.setItem("%x",1)
+// }

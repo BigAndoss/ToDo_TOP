@@ -12,3 +12,40 @@ body{
 nav{
     background-color: whitesmoke;
 }
+
+.search{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* width: 100px;
+    height: 20px; */
+    justify-content: baseline;
+    /* align-items: center; */
+}
+.navo{
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+    gap: 10px;
+    p{
+        width: 200px;
+        font-size: 54px;
+        font-weight: bolder;
+    }
+}
+button{
+    height: 40px;
+    width: 80px;
+    background-color: blue;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
