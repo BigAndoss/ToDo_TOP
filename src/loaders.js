@@ -1,7 +1,7 @@
 export function starter(){
     if(parseInt(localStorage.getItem('%x')) > 1 ){
         show()
-        pretty(2)
+        pretty(1)
     }else{
         localStorage.setItem("%x",1)
         pretty(0)
@@ -41,7 +41,7 @@ export function show (){
 
         const container = document.createElement('div')
         container.classList.add('con')
-        const index = document.createElement('p')
+        const index = document.createElement('span')
         index.innerText = i
 
         const item = document.createElement('p')
@@ -62,6 +62,7 @@ export function show (){
             remove(i)
         })
 
+        // document.querySelector(`[data-index="${parseInt(localStorage.getItem('%x'))-1}"]`).classList.add("bottom")
         container.appendChild(index)
         container.appendChild(item)
         div.appendChild(container)
@@ -69,17 +70,37 @@ export function show (){
         react.appendChild(del)
         div.appendChild(react)
         content.appendChild(div)
+      
     }
+     
+        document.querySelector(`[data-index="${parseInt(localStorage.getItem('%x'))-1}"]`).classList.add('bottom','animation')
+        
+
 }
 
 export function checked(index){
     let btn = document.querySelector(`[data-index="${index}"]`)
-    btn.classList.contains("checked")? btn.classList.remove("checked"): btn.classList.add("checked")
+    if(btn.classList.contains("checked")){
+        btn.classList.remove("checked")
+        btn.children[0].children[1].style.textDecoration = "none"
+        btn.children[0].children[1].style.color = "black"
+
+        btn.children[1].children[0].innerHTML = "&#x2714"
+
+
+    }else{
+        btn.classList.add("checked")
+        btn.children[0].children[1].style.textDecoration = "line-through"
+        btn.children[0].children[1].style.color = "whitesmoke"
+        btn.children[1].children[0].innerHTML = "&#9735"
+    }
+
+    
 }
 
 function pretty(i){
     const x = document.querySelector('.search')
     
-    i>1 ? x.classList.remove('bottom') : x.classList.add('bottom')
+    i>0 ? x.classList.remove('bottom') : x.classList.add('bottom')
 
 }
